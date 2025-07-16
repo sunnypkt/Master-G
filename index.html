@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Client Info & Checklist - Master Immigration Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            max-width: 600px;
+            margin: auto;
+            background-color: #f9f9f9;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .company-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Company Logo and Info -->
+<div class="company-info">
+    <img src="logo.png" alt="Master Immigration Services Logo" class="logo">
+    <h2>Master Immigration Services</h2>
+    <p><strong>Director:</strong> Mr Mahinga Singh<br>
+       <strong>MARN:</strong> 2418428<br>
+       <strong>Mobile:</strong> 0405493537</p>
+</div>
+
+<h1>Please Enter Your Information</h1>
+
+<form id="clientForm">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone">
+
+    <label for="visaSubclass">Visa Subclass (e.g., 189, 190):</label>
+    <input type="text" id="visaSubclass" name="visaSubclass">
+
+    <label for="meetingInfo">Information Required for Brief Meeting:</label>
+    <textarea id="meetingInfo" name="meetingInfo" rows="5" placeholder="Please tell us about your needs or questions..."></textarea>
+
+    <button type="submit">Get My Checklist</button>
+</form>
+
+<div class="success-message" id="successMessage">
+    <p>Thank you! You can download your checklist here: 
+    <a href="checklist.pdf" download>Download Checklist PDF</a></p>
+</div>
+
+<script>
+    document.getElementById('clientForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Show success message and hide form
+        document.getElementById('successMessage').style.display = 'block';
+        this.style.display = 'none';
+    });
+</script>
+
+</body>
+</html>
